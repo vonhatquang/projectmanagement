@@ -1,0 +1,100 @@
+﻿@using WebApp.Models;
+@model LoginUserModel
+@{
+    ViewData["Title"] = "Login Page View";
+	string action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+}
+
+<!--<div><form asp-controller="Account" asp-action="UserLogin" method="post" asp-route-returnurl=@ViewBag.ReturnUrl>
+    User Name:  <input asp-for="UserName" /> <br />
+    Password: <input asp-for="Password" /><br />
+    <button type="submit">Login</button>
+</form>
+</div>-->
+<!--<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pr-wrap">
+                <div class="pass-reset">
+                    <label>
+                        Enter the email you signed up with</label>
+                    <input type="email" placeholder="Email" />
+                    <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
+                </div>
+            </div>
+            <div class="wrap">
+                <p class="form-title">
+                    Sign In</p>                
+				<form class="login" asp-controller="Account" asp-action="UserLogin" method="post" asp-route-returnurl=@ViewBag.ReturnUrl>                
+				<input asp-for="UserName" placeholder="UserName"  />
+				<input asp-for="Password" placeholder="Password" />
+                <input type="submit" value="Sign In" class="btn btn-success btn-sm" />
+                <div class="remember-forgot">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" />
+                                    Remember Me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 forgot-pass-content">
+                            <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(/images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						Sign In
+					</span>
+				</div>
+
+				<!--<form class="login100-form validate-form">-->
+				<form class="login100-form validate-form" asp-controller="Account" asp-action="UserLogin" method="post" asp-route-returnurl=@ViewBag.ReturnUrl>
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100" resource="@{@action}_username">Username</span>
+						<!--<input class="input100" type="text" name="username" placeholder="Enter username">-->
+						<input class="input100" asp-for="UserName" placeholder="Enter username" />
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<!--<input class="input100" type="password" name="pass" placeholder="Enter password">-->
+						<input class="input100" asp-for="Password" placeholder="Enter password" />
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-b-30">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
+
+						<div>
+							<a href="#" class="txt1">
+								Forgot Password?
+							</a>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Login
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
